@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: restaurante
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/parcial
+    username: postgres
+    password: tenorio26
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: public
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+
+# JWT Configuration (Esto va sin la palabra 'spring' al inicio porque es una variable propia)
+jwt:
+  secret: pnc-gamestore-super-secret-key-2026-change-in-production
+  expiration-ms: 86400000
